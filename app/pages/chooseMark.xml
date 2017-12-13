@@ -1,0 +1,38 @@
+<Page 
+    xmlns="http://schemas.nativescript.org/tns.xsd" loaded="loaded" unloaded="onUnloaded" onloading="onloading" navigatingTo="onNavigatingTo" class="page body-dark">
+     <Android>
+        <ActionBar flat="true" backgroundColor="#db2929">
+            <ActionBar.titleView>
+                <GridLayout rows="*" columns="*, auto, *" height="100%">
+                    <StackLayout row="0" col="0" orientation="horizontal" horizontalAlignment="left" width="15%" tap="back">
+                        <Label text="&#xe906;" textWrap="true" class="ic ic_actionbar"/>
+                    </StackLayout>
+                    <StackLayout row="0" col="1" orientation="horizontal" horizontalAlignment="center">
+                        <Label text="Марка" class="action-label m-r-15"/>
+                    </StackLayout>
+                </GridLayout>
+            </ActionBar.titleView>
+            <NavigationButton text="" />
+        </ActionBar>
+    </Android>
+    <Ios>
+        <ActionBar flat="true" backgroundColor="#db2929">
+            <ActionBar.titleView>
+                <StackLayout orientation="horizontal"
+                    horizontalAlignment="center">
+                    <Label text="Марка" class="action-label"/>
+                </StackLayout>
+            </ActionBar.titleView>
+            <NavigationButton text="" />
+        </ActionBar>
+    </Ios>
+    <GridLayout rows="auto, *," columns="" class="body-dark">
+        <ListView row="1" col="0" items="{{ filteredMarksList }}" loaded="onLoaded" itemLoading="onItemLoading" separatorColor="#333" itemTap="{{ onItemTap }}" class="body-dark">
+            <ListView.itemTemplate>
+                <GridLayout orientation="horizontal" class="" rows="60" columns="*" width="100%">
+                    <Label text="{{ $value }}" col="0" verticalAlignment="center" class="text-car-item text-white text-center" textWrap="true" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>
